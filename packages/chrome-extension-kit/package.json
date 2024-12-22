@@ -1,18 +1,15 @@
 {
     "name": "@masa-dev/chrome-extension-kit",
     "version": "0.1.0",
+    "publishConfig": {
+        "access": "public"
+    },
     "type": "module",
     "files": [
         "dist"
     ],
     "module": "./dist/index.js",
-    "types": "./dist/types/index.d.ts",
-    "exports": {
-        ".": {
-            "import": "./dist/index.js",
-            "types": "./dist/types/index.d.ts"
-        }
-    },
+    "types": "./dist/index.d.ts",
     "scripts": {
         "build": "vite build",
         "dev": "vite build --watch"

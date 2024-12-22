@@ -3,7 +3,7 @@ import { resolve } from 'path';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig(({ command }) => {
-    const commonConfig = {
+    return {
         plugins: [
             dts({
                 insertTypesEntry: true,
@@ -20,17 +20,4 @@ export default defineConfig(({ command }) => {
             },
         },
     };
-
-    if (command === 'serve') {
-        return {
-            ...commonConfig,
-            build: {
-                ...commonConfig.build,
-                watch: {},
-                outDir: 'dist',
-            },
-        };
-    }
-
-    return commonConfig;
 });
