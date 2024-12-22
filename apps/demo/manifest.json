@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "cek-demo",
+    "version": "1.0.0",
+    "permissions": [
+        "storage",
+        "activeTab"
+    ],
+    "background": {
+        "service_worker": "src/entries/background.ts"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "src/entries/content.ts"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "src/entries/popup.html"
+    },
+    "host_permissions": [
+        "<all_urls>"
+    ]
+}
